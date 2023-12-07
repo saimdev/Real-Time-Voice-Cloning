@@ -60,7 +60,7 @@ def collapse_whitespace(text):
 
 
 def convert_to_ascii(text):
-  return unidecode(text)
+  return text
 
 
 def basic_cleaners(text):
@@ -78,7 +78,7 @@ def transliteration_cleaners(text):
   return text
 
 
-def english_cleaners(text):
+def urdu_cleaners(text):
   """Pipeline for English text, including number and abbreviation expansion."""
   text = convert_to_ascii(text)
   text = lowercase(text)

@@ -1,0 +1,15 @@
+python synthesizer_preprocess_audio.py C:\Windows32\Real-Time-Voice-Cloning\Urdu_encoder_dataset -n 4 --no_alignments
+python synthesizer_preprocess_audio.py C:\Windows32\Real-Time-Voice-Cloning\Testing_dataset -n 4 --no_alignments
+
+python demo_cli.py -e C:\Windows32\Real-Time-Voice-Cloning\saved_models\default\encoder.pt -s C:\Windows32\Real-Time-Voice-Cloning\saved_models\default\synthesizer.pt -v C:\Windows32\Real-Time-Voice-Cloning\saved_models\default\vocoder.pt --seed 123
+بچوں کو تعلیم میں مزید مدد فراہم کرنا ہمارے معاشرتی بنیادیں مضبوط بناتا ہے۔
+python demo_cli.py -s C:\Windows32\Real-Time-Voice-Cloning\saved_models\default\synthesizer.pt -v C:\Windows32\Real-Time-Voice-Cloning\saved_models\default\vocoder.pt --seed 123
+
+python encoder_train.py 1 C:\Windows32\Real-Time-Voice-Cloning\Custom_Model -m C:\Windows32\Real-Time-Voice-Cloning\encoder\saved_models
+
+python synthesizer_preprocess_embeds.py -e C:\Windows32\Real-Time-Voice-Cloning\encoder\saved_models\1.pt C:\Windows32\Real-Time-Voice-Cloning\Urdu_encoder_dataset\SV2TTS\synthesizer
+
+python synthesizer_train.py 0 C:\Windows32\Real-Time-Voice-Cloning\Urdu_encoder_dataset\SV2TTS\synthesizer -m C:\Windows32\Real-Time-Voice-Cloning\synthesizer\saved_models
+python synthesizer_train.py 1 C:\Windows32\Real-Time-Voice-Cloning\Urdu_encoder_dataset\SV2TTS\synthesizer -m C:\Windows32\Real-Time-Voice-Cloning\synthesizer\saved_models
+
+python demo_cli.py -e C:\Windows32\Real-Time-Voice-Cloning\encoder\saved_models\1.pt -s C:\Windows32\Real-Time-Voice-Cloning\synthesizer\saved_models\1\1.pt -v C:\Windows32\Real-Time-Voice-Cloning\saved_models\default\vocoder.pt --seed 123

@@ -8,7 +8,7 @@ through Unidecode. For other data, you can modify _characters. See TRAINING_DATA
 
 _pad        = "_"
 _eos        = "~"
-_characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!\'\"(),-.:;? "
+_characters = "ا ب پ ت ٹ ث ج چ ح خ د ڈ ذ ر ڑ ز ژ س ش ص ض ط ظ ع غ ف ق ک گ ل م ن ں ه و ء آ ئ ؤ ء ى ي ے َ ً ُ ٌ ِ ٍ ّ ۔ ۰ ۱ ۲ ۳ ۴ ۵ ۶ ۷ ۸ ۹ ! ؟ ‘ ’ “ ” ، ۔ - ـ : ؛"
 
 # Prepend "@" to ARPAbet symbols to ensure uniqueness (some are the same as uppercase letters):
 #_arpabet = ["@' + s for s in cmudict.valid_symbols]

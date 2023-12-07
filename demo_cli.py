@@ -104,7 +104,7 @@ if __name__ == '__main__':
     # The synthesizer can handle multiple inputs with batching. Let's create another embedding to 
     # illustrate that
     embeds = [embed, np.zeros(speaker_embedding_size)]
-    texts = ["test 1", "test 2"]
+    texts = ["بچوں کو تعلیم", "مضبوط بناتا ہے"]
     print("\tTesting the synthesizer... (loading the model will output a lot of text)")
     mels = synthesizer.synthesize_spectrograms(texts, embeds)
     

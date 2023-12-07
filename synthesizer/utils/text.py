@@ -37,6 +37,7 @@ def text_to_sequence(text, cleaner_names):
 
   # Append EOS token
   sequence.append(_symbol_to_id["~"])
+  print("SEQUENCE", sequence)
   return sequence
 
 
@@ -50,6 +51,7 @@ def sequence_to_text(sequence):
       if len(s) > 1 and s[0] == "@":
         s = "{%s}" % s[1:]
       result += s
+  print("RESULT: ", result)
   return result.replace("}{", " ")
 
 
@@ -59,6 +61,7 @@ def _clean_text(text, cleaner_names):
     if not cleaner:
       raise Exception("Unknown cleaner: %s" % name)
     text = cleaner(text)
+  print("CLEANED_TEXT", text)
   return text
 
 
