@@ -13,3 +13,8 @@ python synthesizer_train.py 0 C:\Windows32\Real-Time-Voice-Cloning\Urdu_encoder_
 python synthesizer_train.py 1 C:\Windows32\Real-Time-Voice-Cloning\Urdu_encoder_dataset\SV2TTS\synthesizer -m C:\Windows32\Real-Time-Voice-Cloning\synthesizer\saved_models
 
 python demo_cli.py -e C:\Windows32\Real-Time-Voice-Cloning\encoder\saved_models\1.pt -s C:\Windows32\Real-Time-Voice-Cloning\synthesizer\saved_models\1\1.pt -v C:\Windows32\Real-Time-Voice-Cloning\saved_models\default\vocoder.pt --seed 123
+python generate_voice.py -e C:\Windows32\Real-Time-Voice-Cloning\encoder\saved_models\1.pt -s C:\Windows32\Real-Time-Voice-Cloning\synthesizer\saved_models\1\1.pt -v C:\Windows32\Real-Time-Voice-Cloning\saved_models\default\vocoder.pt --seed 123 --user_id 1 --reference_voice C:\Windows32\Real-Time-Voice-Cloning\testing_a.wav --sentence 'بچوں کو تعلیم میں مزید مدد فراہم کرنا ہمارے معاشرتی بنیادیں مضبوط بناتا ہے۔' --story_id 1 --key 0
+
+python vocoder_preprocess.py C:\Windows32\Real-Time-Voice-Cloning\Urdu_encoder_dataset --model_dir C:\Windows32\Real-Time-Voice-Cloning\synthesizer\saved_models\1 -i C:\Windows32\Real-Time-Voice-Cloning\Urdu_encoder_dataset\SV2TTS\synthesizer -o C:\Windows32\Real-Time-Voice-Cloning\Urdu_encoder_dataset\SV2TTS
+
+python generate_voice.py -e "C:\Windows32\Real-Time-Voice-Cloning\encoder\saved_models\1.pt" -s "C:\Windows32\Real-Time-Voice-Cloning\synthesizer\saved_models\1\1.pt" -v "C:\Windows32\Real-Time-Voice-Cloning\saved_models\default\vocoder.pt" --seed 123 --user_id 1 --reference_voice "C:\Windows32\Real-Time-Voice-Cloning\testing_a.wav" --sentence "بچوں کو تعلیم میں مزید مدد فراہم کرنا ہمارے معاشرتی بنیادیں مضبوط بناتا ہے۔" --story_id 1 --key 0
